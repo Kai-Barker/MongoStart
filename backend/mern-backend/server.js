@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     useUnifiedTopology: true,
 })
 .then( () => console.log('MongoDB connected'))
-.catch(err => console.error(err));
+.catch(err => console.error('Error',err));
 
 
 //Start the server
