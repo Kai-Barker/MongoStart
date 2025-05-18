@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 //load enviornment variables from .env file
 dotenv.config();
@@ -9,7 +10,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
+// Use CORS
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 //Middleware to parse JSON bodies
 app.use(express.json());
 
